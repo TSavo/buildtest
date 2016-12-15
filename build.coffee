@@ -77,7 +77,7 @@ computeDependenciesAfterRemoval = (module)->
   .reject (mod)->
     mod == module
   .map (mod)->
-    computeDependencies mod
+    [mod, computeDependencies mod]
   .flatten()
   .unique()
   .value()
